@@ -21,8 +21,9 @@ jobs:
       - name: Install Dependencies and Build
         run: |
           npm install
+          echo "Dependencies installed, starting build..."
           npm run build
-          
+          echo "Build complete, deploying files..."
           sudo cp -r ./build/* /var/www/html
 
       - name: Restart Nginx
